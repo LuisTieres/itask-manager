@@ -8,7 +8,36 @@
   <script src="app.js" defer></script>
 </head>
 <body>
+    <main>
+        <h1 class="title">iTask Manager</h1>
+        <form >
+        <div>
+          <label >Título</label>
+          <input
+            type="text"
+            name="titulo"
+            placeholder="Ex: Estudar manipulação do DOM"
+            autocomplete="off"
+            required
+          >
+        </div>
 
+        <div >
+          <label >Descrição</label>
+          <textarea
+            name="descricao"
+            placeholder="Detalhes da tarefa (opcional)"
+            rows="2"
+          ></textarea>
+        </div>
+
+        <button type="submit" id="addBtn" >
+          <span aria-hidden="true">+</span>
+          Adicionar tarefa
+        </button>
+      </form>
+
+    </main>
 
 </body>
 </html>
