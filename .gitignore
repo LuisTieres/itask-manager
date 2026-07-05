@@ -1,4 +1,5 @@
-node_modules/
-*.js
-!app.js
-dist/
+﻿node_modules/
+app.js
+app.js.map
+app.d.ts
+app.d.ts.map

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iTask Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <div class="grid" aria-hidden="true"></div>
+
+  <main class="sheet">
+
+    <header class="sheet-header">
+      <h1 class="title">iTask Manager</h1>
+      <p class="subtitle">A planta baixa das suas tarefas do dia.</p>
+    </header>
+
+    <section class="draft-panel" aria-label="Adicionar nova tarefa">
+      <span class="corner corner-tl" aria-hidden="true"></span>
+      <span class="corner corner-tr" aria-hidden="true"></span>
+      <span class="corner corner-bl" aria-hidden="true"></span>
+      <span class="corner corner-br" aria-hidden="true"></span>
+
+      <form id="taskForm" class="task-form" novalidate>
+        <div class="field">
+          <label for="tituloInput">Título</label>
+          <input
+            type="text"
+            id="tituloInput"
+            name="titulo"
+            placeholder="Ex: Estudar manipulação do DOM"
+            autocomplete="off"
+            required
+          >
+        </div>
+
+        <div class="field">
+          <label for="descricaoInput">Descrição</label>
+          <textarea
+            id="descricaoInput"
+            name="descricao"
+            placeholder="Detalhes da tarefa (opcional)"
+            rows="2"
+          ></textarea>
+        </div>
+
+        <button type="submit" id="addBtn" class="add-btn">
+          <span class="btn-plus" aria-hidden="true">+</span>
+          Adicionar tarefa
+        </button>
+      </form>
+    </section>
+
+    <section class="list-panel" aria-label="Lista de tarefas">
+      <div class="list-header">
+        <h2>Registro de Tarefas</h2>
+        <span id="taskCount" class="task-count">0 itens</span>
+      </div>
+
+      <ul id="lista" class="task-list"></ul>
+
+      <p id="emptyState" class="empty-state">
+        Nenhuma tarefa lançada ainda. Comece preenchendo o formulário acima ↑
+      </p>
+    </section>
+
+  </main>
+
+</body>
+</html>
