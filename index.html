@@ -8,13 +8,29 @@
   <script src="app.js" defer></script>
 </head>
 <body>
-    <main>
-        <h1 class="title">iTask Manager</h1>
-        <form >
-        <div>
-          <label >Título</label>
+
+  <div class="grid" aria-hidden="true"></div>
+
+  <main class="sheet">
+
+    <header class="sheet-header">
+      <span class="eyebrow">IJUNIOR &middot; FRONT-END TRACK &middot; SEMANA 04</span>
+      <h1 class="title">iTask Manager</h1>
+      <p class="subtitle">A planta baixa das suas tarefas do dia.</p>
+    </header>
+
+    <section class="draft-panel" aria-label="Adicionar nova tarefa">
+      <span class="corner corner-tl" aria-hidden="true"></span>
+      <span class="corner corner-tr" aria-hidden="true"></span>
+      <span class="corner corner-bl" aria-hidden="true"></span>
+      <span class="corner corner-br" aria-hidden="true"></span>
+
+      <form id="taskForm" class="task-form" novalidate>
+        <div class="field">
+          <label for="tituloInput">Título</label>
           <input
             type="text"
+            id="tituloInput"
             name="titulo"
             placeholder="Ex: Estudar manipulação do DOM"
             autocomplete="off"
@@ -22,35 +38,37 @@
           >
         </div>
 
-        <div >
-          <label >Descrição</label>
+        <div class="field">
+          <label for="descricaoInput">Descrição</label>
           <textarea
+            id="descricaoInput"
             name="descricao"
             placeholder="Detalhes da tarefa (opcional)"
             rows="2"
           ></textarea>
         </div>
 
-        <button type="submit" id="addBtn" >
-          <span aria-hidden="true">+</span>
+        <button type="submit" id="addBtn" class="add-btn">
+          <span class="btn-plus" aria-hidden="true">+</span>
           Adicionar tarefa
         </button>
-
       </form>
-      <section>
-      <div >
+    </section>
+
+    <section class="list-panel" aria-label="Lista de tarefas">
+      <div class="list-header">
         <h2>Registro de Tarefas</h2>
-        <span>itens</span>
+        <span id="taskCount" class="task-count">0 itens</span>
       </div>
 
-      <ul ></ul>
+      <ul id="lista" class="task-list"></ul>
 
-      <p>
+      <p id="emptyState" class="empty-state">
         Nenhuma tarefa lançada ainda. Comece preenchendo o formulário acima ↑
       </p>
     </section>
 
-    </main>
+  </main>
 
 </body>
 </html>
